@@ -1,0 +1,45 @@
+FORMAT: 1A
+HOST: http://someurl.ru/
+
+# Example
+
+## Получение списка данных с параметрами от start_date до end_date [/mobileapi.php/questions/{?start_date,end_date}]
+
+### Получить список каких-то данных [GET]
+
++ Parameters
+    + start_date - Начало чего-то
+    + end_date - Конец чего-то
+
++ Request
+    + Headers
+    
+        Content-Type: application/json
+        X-Auth-UserId: 123
+        X-Auth-UserPassword: md5-password
+
+
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2048
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]
